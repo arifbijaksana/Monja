@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_cek_id_pelanggan"
+            android:icon="@drawable/ic_cek_id_pel"
+            android:title="Cek ID Pelanggan" />
+        <item
+            android:id="@+id/nav_ba_data"
+            android:icon="@drawable/ic_misc_file"
+            android:title="BA Hasil Pemeriksaan" />
+        <item
+            android:id="@+id/nav_graph"
+            android:icon="@drawable/ic_insert_chart_black"
+            android:title="Grafik" />
+        <item
+            android:id="@+id/nav_open_folder"
+            android:icon="@drawable/ic_open_doc"
+            android:title="Manajemen Berkas" />
+        <item
+            android:id="@+id/nav_import_export"
+            android:icon="@drawable/ic_import_export"
+            android:title="Import / Export" />
+    </group>
+
+    <item android:title="Menu Lainnya">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout2"
+                android:title="Logout" />
+            <item
+                android:id="@+id/nav_tentang"
+                android:icon="@drawable/ic_tentang"
+                android:title="Tentang" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SQLAndroidSettings">
+    <option name="packageNameByDirectory">
+      <map>
+        <entry key="D:\Personal Files\Source Code\AndroidSampleProjects\Monja\AndroidSqlEditorDatabases\" value="com.haerul.monja" />
+      </map>
+    </option>
+    <option name="storageVersion" value="2" />
+  </component>
+</project>

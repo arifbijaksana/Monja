@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    style="@style/Widget.TextView.Title"
+                    android:textAlignment="center"
+                    android:text="@string/form_hasil_gangguan"/>
+
+                <RelativeLayout
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:layout_marginTop="25dp"
+                            android:text="@string/no_inspeksi" />
+
+                        <EditText
+                            android:id="@+id/no_inspeksi"
+                            style="@style/Widget.EditText.Primary"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:inputType="textCapWords" />
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:text="@string/rayon" />
+
+                        <com.haerul.monja.utils.CustomSpinner
+                            android:id="@+id/rayon"
+                            style="@style/Widget.Spinner.Primary" />
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:text="@string/penyulangan" />
+
+                        <com.haerul.monja.utils.CustomSpinner
+                            android:id="@+id/penyulangan"
+                            style="@style/Widget.Spinner.Primary" />
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:text="@string/jenis_temuan" />
+
+                        <com.haerul.monja.utils.CustomSpinner
+                            android:id="@+id/jenis_temuan"
+                            style="@style/Widget.Spinner.Primary" />
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:text="@string/tingkat_emergency" />
+
+                        <com.haerul.monja.utils.CustomSpinner
+                            android:id="@+id/tingkatEmergency"
+                            style="@style/Widget.Spinner.Primary" />
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:layout_marginTop="25dp"
+                            android:text="@string/pemadaman" />
+
+
+                        <LinearLayout
+                            android:id="@+id/actionPadam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <Button
+
+                                android:id="@+id/padam"
+                                style="@style/Widget.Button.Success"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="26dp"
+                                android:layout_weight="1"
+                                android:text="@string/padam" />
+
+                            <Button
+                                android:id="@+id/tidakPadam"
+                                style="@style/Widget.Button.Danger"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="26dp"
+                                android:layout_weight="1"
+                                android:text="@string/tidak_padam" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:layout_marginTop="25dp"
+                            android:text="Lokasi Inspeksi" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/lokasi_inspeksi"
+                                style="@style/Widget.EditText.Primary"
+                                android:layout_width="0dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                tools:ignore="UnusedAttribute" />
+
+                            <ImageView
+                                android:id="@+id/set_lokasi"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginRight="16dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:paddingStart="@dimen/_10dp"
+                                android:paddingLeft="@dimen/_10dp"
+                                android:paddingTop="@dimen/_5dp"
+                                android:paddingBottom="@dimen/_10dp"
+                                android:src="@drawable/ic_location" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:text="Tanggal Inspeksi" />
+
+                        <TextView
+                            android:id="@+id/tanggalInspeksi"
+                            style="@style/Widget.Date.Primary"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            bind:inputDate="@{`date`}" />
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:text="@string/jenis_wo" />
+
+                        <com.haerul.monja.utils.CustomSpinner
+                            android:id="@+id/jenis_Wo"
+                            style="@style/Widget.Spinner.Primary"/>
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:text="@string/stat_Tl" />
+
+                        <com.haerul.monja.utils.CustomSpinner
+                            android:id="@+id/statusTl"
+                            style="@style/Widget.Spinner.Primary"/>
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:layout_marginTop="25dp"
+                            android:text="@string/lokasitindaklanjut" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/lokasiTindakLanjut"
+                                style="@style/Widget.EditText.Primary"
+                                android:layout_width="0dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                tools:ignore="UnusedAttribute" />
+
+                            <ImageView
+                                android:id="@+id/set_lokasi_tlanjut"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginRight="16dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:paddingStart="@dimen/_10dp"
+                                android:paddingLeft="@dimen/_10dp"
+                                android:paddingTop="@dimen/_5dp"
+                                android:paddingBottom="@dimen/_10dp"
+                                android:src="@drawable/ic_location" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:text="@string/tgltindaklanjut" />
+
+                        <TextView
+                            android:id="@+id/tanggalTindakLanjut"
+                            style="@style/Widget.Date.Primary"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            bind:inputDate="@{`date`}" />
+
+
+                        <TextView
+                            style="@style/Widget.TextView.Title"
+                            android:text="fotoTindakLanjut" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/photoText"
+                                style="@style/Widget.EditText.Primary"
+                                android:layout_width="0dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                tools:ignore="UnusedAttribute" />
+
+                            <ImageView
+                                android:id="@+id/photo"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginRight="16dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:paddingStart="@dimen/_10dp"
+                                android:paddingLeft="@dimen/_10dp"
+                                android:paddingTop="@dimen/_5dp"
+                                android:paddingBottom="@dimen/_10dp"
+                                android:src="@drawable/ic_add_photo" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/photoPreview"
+                                android:layout_width="0dp"
+                                android:layout_height="250dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/btn_secondary"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="10dp"
+                                android:paddingRight="16dp"
+                                android:paddingBottom="10dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_photo_add_large" />
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginRight="16dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:paddingStart="@dimen/_10dp"
+                                android:paddingLeft="@dimen/_10dp"
+                                android:paddingTop="@dimen/_5dp"
+                                android:paddingBottom="@dimen/_10dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/actionLayout"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+
+                        android:id="@+id/cancel"
+                        android:layout_weight="1"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="26dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/colorTextGray2"
+                        android:text="Cancel"
+                        style="@style/Widget.Button.Secondary"/>
+                    <Button
+                        android:id="@+id/save"
+                        android:layout_weight="1"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="26dp"
+                        android:layout_marginRight="16dp"
+                        android:text="Save"
+                        style="@style/Widget.Button.Success"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

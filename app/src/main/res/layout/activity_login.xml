@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.haerul.monja.ui.login.LoginViewModel" />
+    </data>
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:background="@color/colorPrimary">
+                <!--<ImageView
+                    android:layout_margin="20dp"
+                    android:src="@drawable/sadix_logo_3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content" />-->
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="130dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Welcome back, Please Login"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginRight="26dp"
+                        android:textSize="18sp"
+                        android:layout_marginTop="35dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:enabled="@{viewModel.getIsLoading() ? false : true}"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginRight="26dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:text="i@monja.com"
+                            android:id="@+id/username"
+                            android:inputType="textPersonName"
+                            android:hint="@string/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:enabled="@{viewModel.getIsLoading() ? false : true}"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginRight="26dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:passwordToggleEnabled="true">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:text="1234"
+                            android:id="@+id/password"
+                            android:inputType="textPassword"
+                            android:hint="@string/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkbox"
+                        android:enabled="@{viewModel.getIsLoading() ? false : true}"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Save Password"
+                        android:textColor="@color/colorTextGray3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:onClick="@{()->viewModel.onLoginClick()}"
+                        android:text="@{viewModel.getIsLoading() ? `Logging in...` : `LOGIN`}"
+                        android:background="@{viewModel.getIsLoading() ? @drawable/btn_primary_pressed : @drawable/btn_primary}"
+                        android:enabled="@{viewModel.getIsLoading() ? false : true}"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/textMediumExtra"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginRight="26dp"
+                        android:layout_marginBottom="40dp"
+                        style="@style/Widget.Button.Primary" />
+                    
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textVersion"
+                android:text="Version 1.0.0"
+                android:textColor="@color/colorTextGray2"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_below="@id/cardLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            
+            <TextView
+                android:id="@+id/textCopy"
+                android:text="© MONJA — UP3 BNA, Banda Aceh"
+                android:textColor="@color/colorTextGray2"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_below="@id/textVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
